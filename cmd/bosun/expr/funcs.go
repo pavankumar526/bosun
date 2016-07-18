@@ -224,6 +224,11 @@ var builtins = map[string]parse.Func{
 		Return: models.TypeString,
 		F:      ToDuration,
 	},
+	"formattime": {
+		Args:   []models.FuncType{models.TypeScalar},
+		Return: models.TypeString,
+		F:      FormatTime,
+	},
 	"des": {
 		Args:   []models.FuncType{models.TypeSeriesSet, models.TypeScalar, models.TypeScalar},
 		Return: models.TypeSeriesSet,
@@ -628,6 +633,17 @@ func ToDuration(e *State, T miniprofiler.Timer, sec float64) (*Results, error) {
 	return &Results{
 		Results: []*Result{
 			{Value: String(d.HumanString())},
+		},
+	}, nil
+}
+
+func FormatTime(e *State, T miniprofiler.Timer, sec float64) (*Results, error) {
+	currenttime := time.Now()
+	evaltime := currenttime.Add(time.Duration(sec)*time.Minute)
+	exptime := evaltime.Format("2006-01-02T15:04Z")
+	return &Results{
+		Results: []*Result{
+			{Value: String(exptime)},
 		},
 	}, nil
 }

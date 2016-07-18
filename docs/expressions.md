@@ -545,6 +545,10 @@ dropbool($avg, !($count < $avgCount-100 || $count > $avgCount+100))
 
 Returns the Unix epoch in seconds of the expression start time (scalar).
 
+## formattime(scalar) string
+
+Returns the ISO format from current time and add duration to the time.
+
 ## filter(seriesSet, numberSet) seriesSet
 
 Returns all results in seriesSet that are a subset of numberSet and have a non-zero value. Useful with the limit and sort functions to return the top X results of a query.

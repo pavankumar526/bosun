@@ -23,7 +23,7 @@ _
 
 	var tsdbFuncs = "band|change|count|diff|q|over|shiftBand";
 
-	var builtinFuncs = "abs|avg|cCount|d|des|dev|diff|dropbool|dropg|dropge|dropl|drople|dropna|epoch|filter|first|forecastlr|last|len|limit|linelr|max|median|merge|min|nv|percentile|rename|series|shift|since|sort|streak|sum|t|tod|ungroup";
+	var builtinFuncs = "abs|avg|cCount|d|des|dev|diff|dropbool|dropg|dropge|dropl|drople|dropna|epoch|filter|first|forecastlr|last|len|limit|linelr|max|median|merge|min|nv|percentile|rename|series|shift|since|sort|streak|sum|t|tod|ungroup|formattime";
 
 	var logstashFuncs = "lsstat|lscount";
 
